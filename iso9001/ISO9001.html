@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO9001 品質管理系統認證 - 香港企業專屬服務</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F3460', // 深藍主色，強化專業感
+                        secondary: '#3282B8', // 科技藍輔色，提升現代感
+                        dark: '#1A1A2E', 
+                        light: '#F7F9FC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 28px -8px rgba(0,0,0,0.12);
+            }
+            .mobile-menu-enter {
+                transition: all 0.3s ease-in-out;
+                max-height: 0;
+                overflow: hidden;
+            }
+            .mobile-menu-active {
+                max-height: 500px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light text-dark font-sans">
+    <!-- 導航欄（優化響應式交互） -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fa-solid fa-shield-halved mr-2"></i>
+                <span class="sm:text-xl xs:text-lg">ISO9001 認證服務</span>
+            </a>
+            
+            <!-- 桌面端導航 -->
+            <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                <a href="./home-1.html" class="font-medium hover:text-secondary transition-colors text-sm lg:text-base">首頁</a>
+                <a href="./ISO9001.html" class="font-medium hover:text-secondary transition-colors text-sm lg:text-base">ISO9001</a>
+                <a href="./category.html" class="font-medium hover:text-secondary transition-colors text-sm lg:text-base">管理體系分類</a>
+                <a href="./ISOquestion.html" class="font-medium hover:text-secondary transition-colors text-sm lg:text-base">ISO認證常見問題</a>
+                <a href="./aboutUs.html" class="font-medium hover:text-secondary transition-colors text-sm lg:text-base">講師團隊</a>
+                <a href="./home-1.html" class="font-medium hover:text-secondary transition-colors text-sm lg:text-base">聯絡我們</a>
+            </nav>
+            
+            <!-- 移動端漢堡按鈕 -->
+            <button id="menuToggle" class="md:hidden text-dark text-xl focus:outline-none">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+        
+        <!-- 移動端導航菜單（默認隱藏） -->
+        <div id="mobileMenu" class="md:hidden bg-white border-t border-gray-100 mobile-menu-enter">
+            <nav class="container mx-auto px-4 py-2">
+                <ul class="flex flex-col space-y-3 py-2">
+                    <li><a href="./home-1.html" class="block py-2 font-medium hover:text-secondary transition-colors">首頁</a></li>
+                    <li><a href="./ISO9001.html" class="block py-2 font-medium hover:text-secondary transition-colors">ISO9001</a></li>
+                    <li><a href="./category.html" class="block py-2 font-medium hover:text-secondary transition-colors">管理體系分類</a></li>
+                    <li><a href="./ISOquestion.html" class="block py-2 font-medium hover:text-secondary transition-colors">ISO認證常見問題</a></li>
+                    <li><a href="./aboutUs.html" class="block py-2 font-medium hover:text-secondary transition-colors">講師團隊</a></li>
+                    <li><a href="./home-1.html" class="block py-2 font-medium hover:text-secondary transition-colors">聯絡我們</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+ <style>
+        /* 重置默认样式，避免兼容性问题 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 响应式浮动WhatsApp按钮样式 */
+        .whatsapp-float {
+            /* 固定定位，实现浮动效果，不随页面滚动而消失 */
+            position: fixed;
+            /* 定位在页面右下角，可根据需求调整right/bottom值 */
+            right: 20px;
+            bottom: 20px;
+            /* 按钮大小，移动端自动适配，也可通过媒体查询微调 */
+            width: 60px;
+            height: 60px;
+            /* 圆角设置为50%，实现圆形按钮 */
+            border-radius: 50%;
+            /* WhatsApp品牌绿色背景 */
+            background-color: #25d366;
+            /* 按钮阴影，提升立体感 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            /* 文字/图标居中 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 层级设置，确保按钮在最上层，不被其他元素遮挡 */
+            z-index: 9999;
+            /* 去除下划线（针对链接） */
+            text-decoration: none;
+            /* 过渡效果，hover时更顺滑 */
+            transition: all 0.3s ease;
+            /* 禁止文字选中 */
+            user-select: none;
+        }
+
+        /* 按钮悬浮效果 */
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            background-color: #128c7e;
+        }
+
+        /* WhatsApp图标样式（使用文字替代图片，无需额外资源） */
+        .whatsapp-float i {
+            color: #ffffff;
+            font-size: 28px;
+        }
+
+        /* 媒体查询：适配小屏手机（可选，进一步优化移动端体验） */
+        @media (max-width: 480px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .whatsapp-float i {
+                font-size: 24px;
+            }
+        }
+
+        /* 可选：添加消息提示红点 */
+        .whatsapp-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background-color: #ff3b30;
+            color: white;
+            border-radius: 50%;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+    <!-- 可选：引入Font Awesome图标库（用于显示WhatsApp图标，若不想用图标可替换为文字） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+
+    <!-- ========== WhatsApp浮动按钮（核心元素，需添加到此处） ========== -->
+    <a href="https://wa.me/85253663058" target="_blank" class="whatsapp-float" title="通过WhatsApp联系我们">
+        <i class="fab fa-whatsapp"></i>
+        <!-- 可选：消息提示红点，不需要可删除 -->
+        <span class="whatsapp-badge">1</span>
+    </a>
+</body>
+
+
+
+
+    <!-- Hero 區域（優化移動端高度和字體） -->
+    <section id="home" class="relative h-[60vh] sm:h-[70vh] lg:h-[80vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/id/1071/1920/1080" alt="ISO9001 品質管理系統" class="w-full h-full object-cover opacity-70">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/85 to-secondary/60"></div>
+        </div>
+        <div class="container mx-auto px-4 z-10 text-white">
+            <h1 class="text-[clamp(1.8rem,4vw,3.5rem)] font-bold leading-tight text-shadow mb-4">
+                ISO9001 品質管理系統認證<br>
+                <span class="text-sky-200 text-[clamp(1.5rem,3vw,2.5rem)]">香港企業的品質升級之路</span>
+            </h1>
+            <p class="text-[clamp(0.9rem,1.5vw,1.1rem)] max-w-2xl mb-8 sm:mb-10">
+                深耕香港市場，為中小企業提供一站式 ISO9001 認證解決方案，從體系搭建到審核通過，全程專業陪護。
+            </p>
+            <a href="#contact" class="inline-block bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl text-sm sm:text-base">
+                免費獲取認證規劃 <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 認證介紹（優化移動端排版） -->
+    <section id="about" class="py-10 sm:py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-[clamp(1.5rem,2.5vw,2.2rem)] font-bold text-primary mb-4">什麼是 ISO9001 認證？</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-8 sm:gap-10">
+                <div class="md:w-1/2 w-full">
+                    <img src="https://picsum.photos/id/48/800/600" alt="ISO9001 認證流程" class="w-full rounded-xl shadow-lg object-cover h-auto">
+                </div>
+                <div class="md:w-1/2 w-full">
+                    <p class="text-base sm:text-lg mb-4">
+                        ISO9001 是國際標準化組織（ISO）制訂的品質管理系統核心標準，覆蓋「計劃-執行-檢查-改進」（PDCA）全週期，適用於香港貿易、製造、服務等各類行業。
+                    </p>
+                    <p class="text-base sm:text-lg mb-4">
+                        對香港企業而言，ISO9001 不僅是開展跨境業務的「通行證」，更是優化內部管理、降低運營成本的有效工具，幫助企業在激烈的市場競爭中穩固優勢。
+                    </p>
+                    <div class="flex items-center gap-4 mt-6">
+                        <i class="fa-solid fa-check-circle text-secondary text-xl sm:text-2xl"></i>
+                        <p class="font-medium text-sm sm:text-base">符合香港政府採購、跨境項目招投標基本要求</p>
+                    </div>
+                    <div class="flex items-center gap-4 mt-3">
+                        <i class="fa-solid fa-check-circle text-secondary text-xl sm:text-2xl"></i>
+                        <p class="font-medium text-sm sm:text-base">建立客戶信任，尤其提升國際客戶合作信心</p>
+                    </div>
+                    <div class="flex items-center gap-4 mt-3">
+                        <i class="fa-solid fa-check-circle text-secondary text-xl sm:text-2xl"></i>
+                        <p class="font-medium text-sm sm:text-base">規範流程減少浪費，年均幫助企業降低15%-20%品控成本</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心優勢（優化移動端卡片布局） -->
+    <section id="advantages" class="py-10 sm:py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-[clamp(1.5rem,2.5vw,2.2rem)] font-bold text-primary mb-4">ISO9001 認證核心優勢</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                <p class="text-base sm:text-lg mt-4 max-w-3xl mx-auto">針對香港企業運營特點，打造實用型品質管理價值</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- 優勢卡片 1 -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md card-hover">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                        <i class="fa-solid fa-globe text-primary text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3">跨境業務通行證</h3>
+                    <p class="text-sm sm:text-base">ISO9001 是全球通用的品質認證，幫助香港企業打破地域壁壘，順利與東南亞、歐美等地客戶開展合作，解決跨境貿易中的品質信任問題。</p>
+                </div>
+
+                <!-- 優勢卡片 2 -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md card-hover">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                        <i class="fa-solid fa-landmark text-primary text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3">政府項目入場券</h3>
+                    <p class="text-sm sm:text-base">香港政府採購、創新科技基金申請等項目，均將 ISO9001 認證作為優先考量條件，持有認證可大幅提升企業中標幾率。</p>
+                </div>
+
+                <!-- 優勢卡片 3 -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md card-hover">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                        <i class="fa-solid fa-sitemap text-primary text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3">中小企業管理優化</h3>
+                    <p class="text-sm sm:text-base">針對香港中小企業「人員少、流程靈活」特點，ISO9001 可幫助企業建立標準化流程，避免因人員流動導致的業務中斷與品質波動。</p>
+                </div>
+
+                <!-- 優勢卡片 4 -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md card-hover">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                        <i class="fa-solid fa-shield-virus text-primary text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3">品質風險防禦</h3>
+                    <p class="text-sm sm:text-base">通過風險識別與預防機制，提前規避採購、生產、售後等環節的品質問題，減少香港市場因品控失誤導致的客訴與賠償損失。</p>
+                </div>
+
+                <!-- 優勢卡片 5 -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md card-hover">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                        <i class="fa-solid fa-arrow-trend-up text-primary text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3">品牌價值提升</h3>
+                    <p class="text-sm sm:text-base">在香港消費者與企業客戶心中，ISO9001 認證是「可靠品質」的象徵，可幫助企業區分同行競爭者，提升品牌溢價能力。</p>
+                </div>
+
+                <!-- 優勢卡片 6 -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md card-hover">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                        <i class="fa-solid fa-people-group text-primary text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3">團隊效率提升</h3>
+                    <p class="text-sm sm:text-base">明確部門職責與協作流程，減少內部溝通內耗，據香港中小企協會數據，通過認證企業團隊工作效率平均提升25%以上。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 香港行業案例（優化移動端適配） -->
+    <section id="cases" class="py-10 sm:py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-[clamp(1.5rem,2.5vw,2.2rem)] font-bold text-primary mb-4">香港企業認證成功案例</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                <p class="text-base sm:text-lg mt-4 max-w-3xl mx-auto">來自香港不同行業的真實案例，見證 ISO9001 帶來的改變</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <!-- 案例 1：貿易行業 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
+                    <div class="h-40 sm:h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1060/800/400" alt="香港貿易公司案例" class="w-full h-full object-cover transition-transform hover:scale-105">
+                    </div>
+                    <div class="p-5 sm:p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">貿易行業</span>
+                            <span class="text-gray-500 text-xs sm:text-sm">香港九龍油麻地</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3">某電子產品進出口公司</h3>
+                        <p class="text-gray-700 text-sm sm:text-base mb-4">
+                            企業面臨跨境供應鏈品質管控難題，通過 ISO9001 建立「供應商評估-入庫檢驗-售後跟蹤」體系，客訴率下降60%，成功進入沃爾瑪、豐澤等連鎖渠道。
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs sm:text-sm text-gray-500 gap-2">
+                            <span>認證時間：2023年</span>
+                            <span>核心收穫：新增3個跨國客戶</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 案例 2：製造行業 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
+                    <div class="h-40 sm:h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/287/800/400" alt="香港製造公司案例" class="w-full h-full object-cover transition-transform hover:scale-105">
+                    </div>
+                    <div class="p-5 sm:p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">製造行業</span>
+                            <span class="text-gray-500 text-xs sm:text-sm">香港新界元朗</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3">某精密零件製造廠</h3>
+                        <p class="text-gray-700 text-sm sm:text-base mb-4">
+                            為符合歐盟客戶品質要求啟動認證，通過流程優化將產品不良率從8%降至2%，生產效率提升30%，順利獲得德國博世集團長期訂單。
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs sm:text-sm text-gray-500 gap-2">
+                            <span>認證時間：2022年</span>
+                            <span>核心收穫：年營收增長45%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 案例 3：服務行業 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
+                    <div class="h-40 sm:h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/429/800/400" alt="香港服務公司案例" class="w-full h-full object-cover transition-transform hover:scale-105">
+                    </div>
+                    <div class="p-5 sm:p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">服務行業</span>
+                            <span class="text-gray-500 text-xs sm:text-sm">香港島中環</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-3">某商業諮詢服務公司</h3>
+                        <p class="text-gray-700 text-sm sm:text-base mb-4">
+                            作為香港中小企諮詢服務商，通過 ISO9001 規範服務流程與交付標準，客戶續約率從55%提升至85%，成功入選香港政府中小企支援計劃合作機構。
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs sm:text-sm text-gray-500 gap-2">
+                            <span>認證時間：2024年</span>
+                            <span>核心收穫：政府項目合作資格</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服務內容（優化移動端排版） -->
+    <section id="services" class="py-10 sm:py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-[clamp(1.5rem,2.5vw,2.2rem)] font-bold text-primary mb-4">香港企業專屬認證服務</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+                <div class="flex flex-col md:flex-row gap-4 sm:gap-6 items-center">
+                    <div class="md:w-1/3 w-full">
+                        <img src="https://picsum.photos/id/20/600/400" alt="認證諮詢服務" class="w-full rounded-xl shadow-md object-cover h-auto">
+                    </div>
+                    <div class="md:w-2/3 w-full">
+                        <h3 class="text-lg sm:text-xl font-bold text-primary mb-3">前期諮詢與規劃</h3>
+                        <p class="text-sm sm:text-base mb-4">針對香港企業行業屬性（如貿易、製造、服務）定制方案，上門診斷企業現有流程，對比 ISO9001:2015 最新標準出具差距報告，規劃符合香港商業環境的認證路徑。</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm sm:text-base">
+                            <li>免費上門企業現狀診斷（香港全境覆蓋）</li>
+                            <li>定制化認證時間規劃表（最快2個月拿證）</li>
+                            <li>香港本地導師授課，中文（繁體）標準培訓</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-4 sm:gap-6 items-center">
+                    <div class="md:w-1/3 w-full">
+                        <img src="https://picsum.photos/id/42/600/400" alt="體系搭建服務" class="w-full rounded-xl shadow-md object-cover h-auto">
+                    </div>
+                    <div class="md:w-2/3 w-full">
+                        <h3 class="text-lg sm:text-xl font-bold text-primary mb-3">品質體系搭建</h3>
+                        <p class="text-sm sm:text-base mb-4">結合香港企業「小而精」的運營特點，協助編制簡潔實用的體系文件，避免繁瑣流程，確保文件與實際業務匹配，降低員工執行難度。</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm sm:text-base">
+                            <li>繁體中文體系文件編制（符合香港使用習慣）</li>
+                            <li>流程優化指導，減少不必要的管理環節</li>
+                            <li>內部審核員培訓，確保體系長期運行</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-4 sm:gap-6 items-center">
+                    <div class="md:w-1/3 w-full">
+                        <img src="https://picsum.photos/id/60/600/400" alt="審核輔導服務" class="w-full rounded-xl shadow-md object-cover h-auto">
+                    </div>
+                    <div class="md:w-2/3 w-full">
+                        <h3 class="text-lg sm:text-xl font-bold text-primary mb-3">審核輔導與認證</h3>
+                        <p class="text-sm sm:text-base mb-4">與香港本地權威認證機構（如 SGS、BSI 香港分公司）深度合作，全程陪同企業進行內審與外審，針對審核問題提供即時整改方案，確保一次通過。</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm sm:text-base">
+                            <li>內部審核模擬演練（1:1還原外審場景）</li>
+                            <li>認證機構協調，優化審核時間與流程</li>
+                            <li>外審現場陪同，即時解答審核員疑問</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-4 sm:gap-6 items-center">
+                    <div class="md:w-1/3 w-full">
+                        <img src="https://picsum.photos/id/28/600/400" alt="後續維護服務" class="w-full rounded-xl shadow-md object-cover h-auto">
+                    </div>
+                    <div class="md:w-2/3 w-full">
+                        <h3 class="text-lg sm:text-xl font-bold text-primary mb-3">後續維護與更新</h3>
+                        <p class="text-sm sm:text-base mb-4">認證通過後，提供香港本地長期技術支持，協助企業應對年度監督審核，並及時跟進 ISO 標準更新，確保體系持續符合最新要求。</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm sm:text-base">
+                            <li>年度監督審核提前輔導，避免認證失效</li>
+                            <li>ISO 標準更新講座</li>
+                            <li>24小時線上技術支持（WhatsApp即時回覆）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- 聯絡我們（優化移動端表單） -->
+    <section id="contact" class="py-10 sm:py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-[clamp(1.5rem,2.5vw,2.2rem)] font-bold text-primary mb-4">聯絡我們</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                <p class="text-base sm:text-lg mt-4 max-w-3xl mx-auto">香港全境提供上門服務，立即聯絡獲取免費認證規劃方案</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
+                <div class="w-full">
+                    <img src="https://picsum.photos/id/1031/800/600" alt="聯絡我們" class="w-full rounded-xl shadow-lg object-cover h-auto">
+                </div>
+                <div class="w-full space-y-6 sm:space-y-8">
+                    <!-- WhatsApp 聯絡 -->
+                    <div class="flex items-center gap-4 p-4 sm:p-6 bg-green-50 rounded-lg">
+                        <a href="https://wa.me/85253663058" target="_blank" class="w-12 h-12 sm:w-16 sm:h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl sm:text-3xl hover:bg-green-600 transition-colors">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <div>
+                            <h4 class="font-bold text-lg sm:text-xl text-green-700 mb-1">WhatsApp 即時諮詢</h4>
+                            <p class="text-gray-700 text-sm sm:text-base mb-2">香港本地團隊24小時線上，發送「ISO諮詢」獲取免費方案</p>
+                            <a href="https://wa.me/85253663058" target="_blank" class="text-green-600 font-medium hover:underline text-sm sm:text-base">
+                                <i class="fa-solid fa-phone mr-1"></i> +852 53663058
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 響應式聯繫表單 -->
+                    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳（優化響應式布局） -->
+    <footer class="bg-dark text-white py-8 sm:py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-certificate text-secondary text-2xl sm:text-3xl mr-2"></i>
+                        <h3 class="text-lg sm:text-xl font-bold">ISO認證諮詢中心</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm sm:text-base mb-4">
+                        專業提供ISO各項認證諮詢、輔導與訓練服務，
+                        協助企業提升競爭力，邁向國際化。
+                    </p>
+                    <div class="flex space-x-4 text-xl">
+                        <a href="https://www.facebook.com/ISO9001serviceHK/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/iso9001servicehk/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtu.be/djAxj7Ez4xo?si=LSoZflHcLEwiW1Kt" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/85253663058" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-base sm:text-lg font-medium mb-4 border-b border-gray-700 pb-2">快速連結</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./home-1.html" class="text-gray-400 hover:text-white transition-colors text-sm">首頁</a></li>
+                        <li><a href="./ISO9001.html" class="text-gray-400 hover:text-white transition-colors text-sm">ISO9001</a></li>
+                        <li><a href="./category.html" class="text-gray-400 hover:text-white transition-colors text-sm">管理體系分類</a></li>
+                        <li><a href="./ISOquestion.html" class="text-gray-400 hover:text-white transition-colors text-sm">ISO認證常見問題</a></li>
+                        <li><a href="./aboutUs.html" class="text-gray-400 hover:text-white transition-colors text-sm">講師團隊</a></li>
+                        <li><a href="./home-1.html" class="text-gray-400 hover:text-white transition-colors text-sm">聯繫我們</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-base sm:text-lg font-medium mb-4 border-b border-gray-700 pb-2">服務範疇</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">ISO9001 品質管理</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">ISO14001 環境管理</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">ISO45001 職安管理</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">內部審核員培訓</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">體系文件編制</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-base sm:text-lg font-medium mb-4 border-b border-gray-700 pb-2">聯繫我們</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>深圳市光明區鬆白路5059號啓航大廈905室</li>
+                        <li>WhatsApp：+852 53663058</li>
+                        <li>Email：cocoyao570@gmail.com</li>
+                        <li>深圳辦事處 | 香港服務團隊</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 廣東省深圳市証多寶認證服務有限公司 版權所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript（優化響應式交互） -->
+    <script>
+        // 移動端菜單切換
+        const menuToggle = document.getElementById('menuToggle');
+        const menuIcon = document.getElementById('menuIcon');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('mobile-menu-active');
+            // 切換菜單圖標
+            if (menuIcon.classList.contains('fa-bars')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // 平滑滾動（兼容所有設備）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // 根據設備調整偏移量
+                    const offsetTop = window.innerWidth < 768 ? targetElement.offsetTop - 70 : targetElement.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+
+                    // 移動端點擊導航後關閉菜單
+                    if (mobileMenu.classList.contains('mobile-menu-active')) {
+                        mobileMenu.classList.remove('mobile-menu-active');
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+
+        // 導航欄滾動效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.add('shadow-sm');
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // 表單提交阻止默認行為（演示用）
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('諮詢表單已提交，我們將盡快與您聯繫！');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>

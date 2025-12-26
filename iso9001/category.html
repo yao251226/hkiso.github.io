@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理體系分類問題解答 - ISO認證常見問題</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome (用於圖示) -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定義Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF', // 深藍主色
+                        secondary: '#3B82F6', // 淺藍輔色
+                        accent: '#10B981', // WhatsApp綠色
+                        neutral: '#F3F4F6', // 淺灰背景
+                        dark: '#1F2937', // 深色文字
+                        card: '#FFFFFF', // 卡片背景
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .faq-item-active .faq-answer {
+                max-height: 500px;
+                opacity: 1;
+            }
+            .faq-item-active .faq-icon {
+                transform: rotate(180deg);
+            }
+            .cert-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .cert-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+    <!-- 引入台灣正體中文字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans text-dark bg-white flex flex-col min-h-screen">
+    <!-- 頁頭 (Header) -->
+    <header class="bg-primary text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl md:text-3xl font-bold">深圳証多寶認證服務有限公司</h1>
+            <!-- 導航欄 - 響應式設計 -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="./home-1.html" class="hover:text-neutral transition-colors duration-300">首頁</a></li>
+                    <li><a href="./ISO9001.html" class="hover:text-neutral transition-colors duration-300">ISO9001</a></li>
+                    <li><a href="./category.html" class="hover:text-neutral transition-colors duration-300">管理體系分類</a></li>
+                    <li><a href="./ISOquestion.html" class="hover:text-neutral transition-colors duration-300">ISO認證常見問題</a></li>
+                    <li><a href="./aboutUs.html" class="hover:text-neutral transition-colors duration-300">講師團隊</a></li>
+                    <li><a href="./home-1.html" class="hover:text-neutral transition-colors duration-300">聯繫方式</a></li>
+                </ul>
+            </nav>
+            <!-- 手機端漢堡按鈕 -->
+            <button id="menuBtn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <!-- 手機端導航菜單 (預設隱藏) -->
+        <div id="mobileMenu" class="md:hidden bg-secondary hidden px-4 py-2 shadow-lg">
+            <ul class="flex flex-col space-y-3 py-2">
+                <li><a href="./home-1.html" class="hover:text-neutral transition-colors duration-300">首頁</a></li>
+                <li><a href="./ISO9001.html" class="hover:text-neutral transition-colors duration-300">ISO9001</a></li>
+                <li><a href="./category.html" class="hover:text-neutral transition-colors duration-300">管理體系分類</a></li>
+                <li><a href="./ISOquestion.html" class="hover:text-neutral transition-colors duration-300">ISO認證常見問題</a></li>
+                <li><a href="./aboutUs.html" class="hover:text-neutral transition-colors duration-300">講師團隊</a></li>
+                <li><a href="./home-1.html" class="hover:text-neutral transition-colors duration-300">聯繫方式</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 主要內容區 (Main Content) -->
+    <main class="flex-grow">
+        <!-- 標題區 -->
+        <section class="bg-neutral py-12 md:py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">管理體系分類問題解答</h2>
+                <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+                    關於ISO45001、ISO13485、ISO27001、ISO14064、ISO22000、ISO20000、ISO/ATF16949、ISO37001認證的常見問題與詳細介紹
+                </p>
+            </div>
+        </section>
+
+        <!-- 新增：ISO認證詳細介紹區 -->
+        <section id="cert-intro" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-primary">各項ISO認證詳細介紹</h3>
+                
+                <!-- 認證卡片列表 - 響應式布局 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <!-- ISO45001 卡片 -->
+                    <div class="cert-card bg-card rounded-lg shadow-md overflow-hidden border border-gray-100">
+                        <div class="bg-primary/10 px-5 py-4">
+                            <h4 class="text-xl font-bold text-primary text-center">ISO45001</h4>
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心定位：</span>
+                                <span class="text-gray-700">職業健康安全管理體系</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">適用對象：</span>
+                                <span class="text-gray-700">所有存在職業健康安全風險的企業（製造、建築、礦業等）</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心價值：</span>
+                                <ul class="text-gray-700 list-disc list-inside ml-2 space-y-1">
+                                    <li>預防工傷事故與職業病</li>
+                                    <li>提升企業職安管理水準</li>
+                                    <li>符合勞動法規要求，降低法律風險</li>
+                                    <li>增強員工安全感與企業凝聚力</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark">替代標準：</span>
+                                <span class="text-gray-700">OHSAS 18001</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ISO13485 卡片 -->
+                    <div class="cert-card bg-card rounded-lg shadow-md overflow-hidden border border-gray-100">
+                        <div class="bg-primary/10 px-5 py-4">
+                            <h4 class="text-xl font-bold text-primary text-center">ISO13485</h4>
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心定位：</span>
+                                <span class="text-gray-700">醫療器械品質管理體系</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">適用對象：</span>
+                                <span class="text-gray-700">醫療器械製造商、供應商、服務提供商</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心價值：</span>
+                                <ul class="text-gray-700 list-disc list-inside ml-2 space-y-1">
+                                    <li>確保醫療器械安全與有效性</li>
+                                    <li>符合全球醫療器械法規要求</li>
+                                    <li>提升產品品質與市場准入資格</li>
+                                    <li>強化全生命週期風險管理</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark">特色要求：</span>
+                                <span class="text-gray-700">法規符合性導向，強化追溯性</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ISO27001 卡片 -->
+                    <div class="cert-card bg-card rounded-lg shadow-md overflow-hidden border border-gray-100">
+                        <div class="bg-primary/10 px-5 py-4">
+                            <h4 class="text-xl font-bold text-primary text-center">ISO27001</h4>
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心定位：</span>
+                                <span class="text-gray-700">資訊安全管理體系</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">適用對象：</span>
+                                <span class="text-gray-700">各行業需要保護資訊資產的企業（互聯網、金融、政企等）</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心價值：</span>
+                                <ul class="text-gray-700 list-disc list-inside ml-2 space-y-1">
+                                    <li>防範資訊洩露、篡改與丟失風險</li>
+                                    <li>符合資訊安全相關法規（如個資法）</li>
+                                    <li>提升客戶對企業資安的信任度</li>
+                                    <li>規範資訊安全管理流程，降低損失</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark">核心框架：</span>
+                                <span class="text-gray-700">PDCA循環+14個控制域+114項控制措施</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ISO14064 卡片 -->
+                    <div class="cert-card bg-card rounded-lg shadow-md overflow-hidden border border-gray-100">
+                        <div class="bg-primary/10 px-5 py-4">
+                            <h4 class="text-xl font-bold text-primary text-center">ISO14064</h4>
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心定位：</span>
+                                <span class="text-gray-700">溫室氣體核算與驗證標準</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">適用對象：</span>
+                                <span class="text-gray-700">關注碳排減量的企業、參與碳交易的機構</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心價值：</span>
+                                <ul class="text-gray-700 list-disc list-inside ml-2 space-y-1">
+                                    <li>科學核算溫室氣體排放與減排量</li>
+                                    <li>符合國家碳減排政策與國際承諾</li>
+                                    <li>提升企業綠色形象，增強品牌競爭力</li>
+                                    <li>優化能源結構，降低碳排放成本</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark">標準構成：</span>
+                                <span class="text-gray-700">3部分（組織/專案/驗證）</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ISO22000 卡片 -->
+                    <div class="cert-card bg-card rounded-lg shadow-md overflow-hidden border border-gray-100">
+                        <div class="bg-primary/10 px-5 py-4">
+                            <h4 class="text-xl font-bold text-primary text-center">ISO22000</h4>
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心定位：</span>
+                                <span class="text-gray-700">食品安全管理體系</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">適用對象：</span>
+                                <span class="text-gray-700">食品鏈全流程企業（生產、加工、分銷、餐飲等）</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心價值：</span>
+                                <ul class="text-gray-700 list-disc list-inside ml-2 space-y-1">
+                                    <li>預防食品安全危害，保障消費者健康</li>
+                                    <li>符合食品衛生法規，降低違規風險</li>
+                                    <li>提升食品品質穩定性，減少浪費</li>
+                                    <li>增強市場准入資格，拓展銷售渠道</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark">核心原理：</span>
+                                <span class="text-gray-700">HACCP（危害分析與關鍵控制點）</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ISO20000 卡片 -->
+                    <div class="cert-card bg-card rounded-lg shadow-md overflow-hidden border border-gray-100">
+                        <div class="bg-primary/10 px-5 py-4">
+                            <h4 class="text-xl font-bold text-primary text-center">ISO20000</h4>
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心定位：</span>
+                                <span class="text-gray-700">IT服務管理體系</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">適用對象：</span>
+                                <span class="text-gray-700">IT服務提供商、大型企業IT部門</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心價值：</span>
+                                <ul class="text-gray-700 list-disc list-inside ml-2 space-y-1">
+                                    <li>優化IT服務流程，提升服務品質</li>
+                                    <li>降低IT運營成本，提高工作效率</li>
+                                    <li>增強客戶滿意度與忠誠度</li>
+                                    <li>實現IT服務的可量化與持續改進</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark">參考依據：</span>
+                                <span class="text-gray-700">ITIL（資訊技術基礎架構庫）</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ISO/ATF16949 卡片 -->
+                    <div class="cert-card bg-card rounded-lg shadow-md overflow-hidden border border-gray-100">
+                        <div class="bg-primary/10 px-5 py-4">
+                            <h4 class="text-xl font-bold text-primary text-center">ISO/IATF16949</h4>
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心定位：</span>
+                                <span class="text-gray-700">汽車行業品質管理體系</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">適用對象：</span>
+                                <span class="text-gray-700">汽車零部件製造商、汽車組裝廠</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心價值：</span>
+                                <ul class="text-gray-700 list-disc list-inside ml-2 space-y-1">
+                                    <li>滿足汽車行業嚴格的品質要求</li>
+                                    <li>實現供應鏈品質標準統一</li>
+                                    <li>降低產品缺陷率，減少召回風險</li>
+                                    <li>提升企業在汽車供應鏈中的競爭力</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark">特色工具：</span>
+                                <span class="text-gray-700">APQP、PPAP、FMEA等五大核心工具</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ISO37001 卡片 -->
+                    <div class="cert-card bg-card rounded-lg shadow-md overflow-hidden border border-gray-100">
+                        <div class="bg-primary/10 px-5 py-4">
+                            <h4 class="text-xl font-bold text-primary text-center">ISO37001</h4>
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心定位：</span>
+                                <span class="text-gray-700">反賄賂管理體系</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">適用對象：</span>
+                                <span class="text-gray-700">各行業企業，尤其跨國經營、政府採購相關機構</span>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-semibold text-dark">核心價值：</span>
+                                <ul class="text-gray-700 list-disc list-inside ml-2 space-y-1">
+                                    <li>預防與控制賄賂風險，保護企業聲譽</li>
+                                    <li>符合反貪腐法規要求，降低法律風險</li>
+                                    <li>提升企業商業倫理形象，增強投資者信心</li>
+                                    <li>規範商業合作流程，實現陽光經營</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark">核心要素：</span>
+                                <span class="text-gray-700">反賄賂政策、風險評估、舉報機制</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ常見問題區 -->
+        <section id="faq" class="py-12 md:py-16 bg-neutral/50">
+            <div class="container mx-auto px-4">
+                <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 text-primary">各項ISO認證相關問題</h3>
+                
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <!-- ISO45001 -->
+                    <div class="faq-item border border-gray-200 rounded-lg shadow-sm overflow-hidden" onclick="toggleFaq(this)">
+                        <div class="faq-question bg-white p-5 flex justify-between items-center cursor-pointer hover:bg-neutral transition-colors duration-300">
+                            <h4 class="font-semibold text-lg">ISO45001是什麼類別的管理體系？主要應用於哪些行業？</h4>
+                            <i class="faq-icon fa fa-chevron-down text-secondary transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-white p-5 pt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-500">
+                            <p class="text-gray-700 leading-relaxed">
+                                ISO45001是職業健康安全管理體系標準，取代了原有的OHSAS 18001。它主要用於規範企業的職業健康安全管理，預防工傷事故和職業病的發生。<br>
+                                應用行業包括：製造業、建築業、礦業、物流業、化工業等所有存在職業健康安全風險的行業。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ISO13485 -->
+                    <div class="faq-item border border-gray-200 rounded-lg shadow-sm overflow-hidden" onclick="toggleFaq(this)">
+                        <div class="faq-question bg-white p-5 flex justify-between items-center cursor-pointer hover:bg-neutral transition-colors duration-300">
+                            <h4 class="font-semibold text-lg">ISO13485認證的核心要求是什麼？與一般品質管理體系有何不同？</h4>
+                            <i class="faq-icon fa fa-chevron-down text-secondary transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-white p-5 pt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-500">
+                            <p class="text-gray-700 leading-relaxed">
+                                ISO13485是醫療器械品質管理體系標準，核心要求是確保醫療器械從設計、開發、生產、安裝到售後服務的全生命週期符合法規要求和產品安全有效性。<br>
+                                與ISO9001相比，ISO13485更側重於法規符合性、風險管理和醫療器械的特殊性要求，適用於醫療器械製造商、供應商和服務提供商。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ISO27001 -->
+                    <div class="faq-item border border-gray-200 rounded-lg shadow-sm overflow-hidden" onclick="toggleFaq(this)">
+                        <div class="faq-question bg-white p-5 flex justify-between items-center cursor-pointer hover:bg-neutral transition-colors duration-300">
+                            <h4 class="font-semibold text-lg">ISO27001資訊安全管理體系的認證流程是怎樣的？</h4>
+                            <i class="faq-icon fa fa-chevron-down text-secondary transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-white p-5 pt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-500">
+                            <p class="text-gray-700 leading-relaxed">
+                                ISO27001認證流程主要包括：1. 前期準備（確定範圍、建立體系文件）；2. 內部審核與管理評審；3. 選擇認證機構並提交申請；4. 認證機構進行第一階段審核（文件審核）；5. 第二階段審核（現場審核）；6. 審核通過後頒發證書；7. 後續監督審核（每年一次）和再認證（每三年一次）。<br>
+                                該體系主要保護企業的資訊資產，防止資訊洩露、丟失和被篡改。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ISO14064 -->
+                    <div class="faq-item border border-gray-200 rounded-lg shadow-sm overflow-hidden" onclick="toggleFaq(this)">
+                        <div class="faq-question bg-white p-5 flex justify-between items-center cursor-pointer hover:bg-neutral transition-colors duration-300">
+                            <h4 class="font-semibold text-lg">ISO14064的主要用途是什麼？企業為何需要進行該認證？</h4>
+                            <i class="faq-icon fa fa-chevron-down text-secondary transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-white p-5 pt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-500">
+                            <p class="text-gray-700 leading-relaxed">
+                                ISO14064是溫室氣體核算與驗證標準，分為三個部分：ISO14064-1（組織層級溫室氣體盤查）、ISO14064-2（專案層級溫室氣體減排量化）、ISO14064-3（溫室氣體聲明驗證）。<br>
+                                企業進行該認證的原因包括：符合國家碳減排政策要求、提升企業綠色形象、參與碳交易市場、優化能源使用效率、降低碳排放成本等，適用於所有關注溫室氣體排放的企業。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ISO22000 -->
+                    <div class="faq-item border border-gray-200 rounded-lg shadow-sm overflow-hidden" onclick="toggleFaq(this)">
+                        <div class="faq-question bg-white p-5 flex justify-between items-center cursor-pointer hover:bg-neutral transition-colors duration-300">
+                            <h4 class="font-semibold text-lg">ISO22000食品安全管理體系適用於哪些企業？核心原則是什麼？</h4>
+                            <i class="faq-icon fa fa-chevron-down text-secondary transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-white p-5 pt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-500">
+                            <p class="text-gray-700 leading-relaxed">
+                                ISO22000適用於食品鏈中的所有企業，包括食品生產商、加工商、分銷商、零售商、餐飲企業以及食品包裝、運輸等服務提供商。<br>
+                                核心原則是基於危害分析與關鍵控制點（HACCP）原理，通過識別、評估和控制食品安全危害，確保食品從農場到餐桌的安全，同時整合了ISO9001的品質管理理念，強調體系的有效性和持續改進。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ISO20000 -->
+                    <div class="faq-item border border-gray-200 rounded-lg shadow-sm overflow-hidden" onclick="toggleFaq(this)">
+                        <div class="faq-question bg-white p-5 flex justify-between items-center cursor-pointer hover:bg-neutral transition-colors duration-300">
+                            <h4 class="font-semibold text-lg">ISO20000與ITIL有何關係？企業導入ISO20000有哪些好處？</h4>
+                            <i class="faq-icon fa fa-chevron-down text-secondary transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-white p-5 pt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-500">
+                            <p class="text-gray-700 leading-relaxed">
+                                ISO20000是IT服務管理體系標準，而ITIL（資訊技術基礎架構庫）是IT服務管理的最佳實踐指南，ISO20000以ITIL為基礎，將IT服務管理的最佳實踐轉化為可認證的體系要求。<br>
+                                企業導入ISO20000的好處包括：提升IT服務品質和客戶滿意度、優化IT服務流程、降低IT運營成本、增強企業核心競爭力、符合合規性要求，適用於IT服務提供商和大型企業的IT部門。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ISO/ATF16949 -->
+                    <div class="faq-item border border-gray-200 rounded-lg shadow-sm overflow-hidden" onclick="toggleFaq(this)">
+                        <div class="faq-question bg-white p-5 flex justify-between items-center cursor-pointer hover:bg-neutral transition-colors duration-300">
+                            <h4 class="font-semibold text-lg">ISO/ATF16949認證的適用範圍是什麼？有哪些特殊要求？</h4>
+                            <i class="faq-icon fa fa-chevron-down text-secondary transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-white p-5 pt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-500">
+                            <p class="text-gray-700 leading-relaxed">
+                                ISO/ATF16949（現已更新為IATF16949）是汽車行業品質管理體系標準，適用於汽車零部件製造商、汽車組裝廠以及直接供應汽車行業的產品和服務提供商。<br>
+                                特殊要求包括：基於ISO9001的基礎上，增加了汽車行業的特殊要求，如APQP（產品品質先期策劃）、PPAP（生產件批准程式）、FMEA（失效模式與影響分析）、SPC（統計過程控制）、MSA（測量系統分析）等五大核心工具的應用，強調持續改進、缺陷預防和減少變異。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ISO37001 -->
+                    <div class="faq-item border border-gray-200 rounded-lg shadow-sm overflow-hidden" onclick="toggleFaq(this)">
+                        <div class="faq-question bg-white p-5 flex justify-between items-center cursor-pointer hover:bg-neutral transition-colors duration-300">
+                            <h4 class="font-semibold text-lg">ISO37001反賄賂管理體系的核心內容是什麼？企業如何建立該體系？</h4>
+                            <i class="faq-icon fa fa-chevron-down text-secondary transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-white p-5 pt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-500">
+                            <p class="text-gray-700 leading-relaxed">
+                                ISO37001的核心內容包括：制定反賄賂政策和承諾、識別和評估賄賂風險、建立反賄賂控制措施（如合規培訓、審批流程、利益衝突管理）、實施監督和審核、建立舉報機制以及持續改進反賄賂體系。<br>
+                                企業建立該體系的步驟：1. 高層承諾與資源投入；2. 確定體系範圍和方針；3. 開展賄賂風險評估；4. 制定和實施控制措施；5. 開展員工培訓和溝通；6. 實施內部審核和管理評審；7. 持續改進體系有效性，適用於所有行業的企業，尤其是跨國經營和政府採購相關企業。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 關於我們 (簡介區) -->
+        <section id="about" class="bg-neutral py-12 md:py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold text-primary mb-6">關於我們</h3>
+                    <p class="text-gray-700 leading-relaxed mb-8">
+                        我們是專業的管理體系認證諮詢機構，擁有多年的ISO認證諮詢經驗，團隊成員均具備豐富的行業知識和認證輔導經歷。我們致力於為企業提供全方位的ISO認證解決方案，協助企業建立完善的管理體系，順利通過各項國際認證，提升企業的市場競爭力和品牌形象。
+                    </p>
+                    
+                </div>
+            </div>
+        </section>
+
+        
+
+    <!-- 頁尾 (Footer) -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">管理體系認證諮詢</h4>
+                    <p class="text-gray-300">
+                        專注於各項ISO國際認證輔導，協助企業提升管理水準，增強市場競爭力。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">快速連結</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="./home-1.html" class="hover:text-white transition-colors duration-300">首頁</a></li>
+                        <li><a href="./ISO9001.html" class="hover:text-white transition-colors duration-300">ISO9001</a></li>
+                        <li><a href="./category.html" class="hover:text-white transition-colors duration-300">管理體系分類</a></li>
+                        <li><a href="./ISOquestion.html" class="hover:text-white transition-colors duration-300">ISO認證常見問題</a></li>
+                        <li><a href="./aboutUs.html" class="hover:text-white transition-colors duration-300">講師團隊</a></li>
+                        <li><a href="./home-1.html" class="hover:text-white transition-colors duration-300">聯繫方式</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">追蹤我們</h4>
+                    <div class="flex space-x-4 text-xl">
+                        <a href="https://www.facebook.com/ISO9001serviceHK/"class="text-gray-300 hover:text-white transition-colors duration-300">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                        <a href="https://www.instagram.com/iso9001servicehk" class="text-gray-300 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">
+                            <i class="fa fa-linkedin-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 深圳証多寶版權所有 | 中小企業ISO實戰專家</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 浮動WhatsApp按鈕 -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <a href="https://wa.me/85253663058" target="_blank" class="bg-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors duration-300 transform hover:scale-110">
+            <i class="fa fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // 手機端菜單切換
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // 切換漢堡/關閉圖示
+            const icon = menuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // FAQ展開/收合切換
+        function toggleFaq(element) {
+            element.classList.toggle('faq-item-active');
+            
+            // 關閉其他已展開的FAQ
+            const allFaqItems = document.querySelectorAll('.faq-item');
+            allFaqItems.forEach(item => {
+                if (item !== element && item.classList.contains('faq-item-active')) {
+                    item.classList.remove('faq-item-active');
+                }
+            });
+        }
+
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // 避開固定頁頭
+                        behavior: 'smooth'
+                    });
+
+                    // 手機端點擊導航後關閉菜單
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        const icon = menuBtn.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

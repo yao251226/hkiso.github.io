@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO認證常見問題解答 - 專業諮詢平台</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 圖示 -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定義配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af', // 深藍主色
+                        secondary: '#3b82f6', // 淺藍輔色
+                        neutral: '#f3f4f6', // 淺灰背景
+                        dark: '#1f2937', // 深色文字
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .faq-item-active {
+                @apply bg-primary/5 border-primary;
+            }
+            .nav-link-active {
+                @apply text-primary border-b-2 border-primary;
+            }
+        }
+    </style>
+    <!-- 引入台灣正體中文字型 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans text-dark bg-white">
+    <!-- 頁頭 (導航欄) -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <!-- 網站標誌 -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <i class="fa fa-certificate text-primary text-3xl mr-2"></i>
+                <h1 class="text-2xl font-bold text-primary">証多寶ISO認證服務</h1>
+            </div>
+            <!-- 導航連結 -->
+            <ul class="flex flex-wrap justify-center gap-6">
+                <li><a href="./home-1.html" class="nav-link-active py-2 font-medium hover:text-primary transition-colors">首頁</a></li>
+                <li><a href="./ISO9001.html" class="py-2 font-medium hover:text-primary transition-colors">ISO9001</a></li>
+                <li><a href="./category.html" class="py-2 font-medium hover:text-primary transition-colors">管理體系分類</a></li>
+                <li><a href="./ISOquestion.html" class="py-2 font-medium hover:text-primary transition-colors">ISO認證常見問題</a></li>
+                <li><a href="./aboutUs.html" class="py-2 font-medium hover:text-primary transition-colors">講師團隊</a></li>
+                <li><a href="./home-1.html" class="py-2 font-medium hover:text-primary transition-colors">聯繫我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主要內容區 -->
+
+
+    <style>
+        /* 重置默认样式，避免兼容性问题 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 响应式浮动WhatsApp按钮样式 */
+        .whatsapp-float {
+            /* 固定定位，实现浮动效果，不随页面滚动而消失 */
+            position: fixed;
+            /* 定位在页面右下角，可根据需求调整right/bottom值 */
+            right: 20px;
+            bottom: 20px;
+            /* 按钮大小，移动端自动适配，也可通过媒体查询微调 */
+            width: 60px;
+            height: 60px;
+            /* 圆角设置为50%，实现圆形按钮 */
+            border-radius: 50%;
+            /* WhatsApp品牌绿色背景 */
+            background-color: #25d366;
+            /* 按钮阴影，提升立体感 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            /* 文字/图标居中 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 层级设置，确保按钮在最上层，不被其他元素遮挡 */
+            z-index: 9999;
+            /* 去除下划线（针对链接） */
+            text-decoration: none;
+            /* 过渡效果，hover时更顺滑 */
+            transition: all 0.3s ease;
+            /* 禁止文字选中 */
+            user-select: none;
+        }
+
+        /* 按钮悬浮效果 */
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            background-color: #128c7e;
+        }
+
+        /* WhatsApp图标样式（使用文字替代图片，无需额外资源） */
+        .whatsapp-float i {
+            color: #ffffff;
+            font-size: 28px;
+        }
+
+        /* 媒体查询：适配小屏手机（可选，进一步优化移动端体验） */
+        @media (max-width: 480px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .whatsapp-float i {
+                font-size: 24px;
+            }
+        }
+
+        /* 可选：添加消息提示红点 */
+        .whatsapp-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background-color: #ff3b30;
+            color: white;
+            border-radius: 50%;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+    <!-- 可选：引入Font Awesome图标库（用于显示WhatsApp图标，若不想用图标可替换为文字） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+
+    <!-- ========== WhatsApp浮动按钮（核心元素，需添加到此处） ========== -->
+    <a href="https://wa.me/85253663058" target="_blank" class="whatsapp-float" title="通过WhatsApp联系我们">
+        <i class="fab fa-whatsapp"></i>
+        <!-- 可选：消息提示红点，不需要可删除 -->
+        <span class="whatsapp-badge">1</span>
+    </a>
+</body>
+</html>
+
+
+    <main>
+        <!-- 首頁橫幅 -->
+        <section id="home" class="bg-primary/5 py-16 md:py-24">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-primary mb-4">ISO認證完整解答</h2>
+                    <p class="text-lg mb-6 text-gray-700">
+                        提供ISO 9001、ISO 14001、ISO 45001等各項認證的專業諮詢與常見問題解答，
+                        協助企業順利通過認證，提升營運效率與國際競爭力。
+                    </p>
+                    <a href="#faq" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
+                        查看常見問題 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <img src="https://picsum.photos/id/180/800/600" alt="ISO認證文件與辦公場景" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- ISO常見問題解答區 -->
+        <section id="faq" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-2">ISO認證常見問題</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">整理企業在申請ISO認證過程中最常遇到的疑問，提供詳細專業解答</p>
+                </div>
+
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <!-- FAQ項目1 -->
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 text-left font-medium hover:bg-gray-50 transition-colors" onclick="toggleFaq(this)">
+                            <span>什麼是ISO認證？它有哪些主要類別？</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-4 pb-4 text-gray-700">
+                            <p class="mb-2">ISO（國際標準化組織）是一個全球性的非政府組織，負責制定各領域的國際標準。ISO認證是指企業符合該組織制定的特定標準，並通過第三方機構審核後獲得的認證資格。</p>
+                            <p>主要類別包含：</p>
+                            <ul class="list-disc pl-6 mt-2 space-y-1">
+                                <li>ISO 9001：品質管理系統認證</li>
+                                <li>ISO 14001：環境管理系統認證</li>
+                                <li>ISO 45001：職業安全衛生管理系統認證</li>
+                                <li>ISO 27001：資訊安全管理系統認證</li>
+                                <li>ISO 13485：醫療器材品質管理系統認證</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- FAQ項目2 -->
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 text-left font-medium hover:bg-gray-50 transition-colors" onclick="toggleFaq(this)">
+                            <span>企業為什麼需要申請ISO認證？有哪些好處？</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-4 pb-4 text-gray-700">
+                            <p>企業申請ISO認證的核心好處包含：</p>
+                            <ul class="list-disc pl-6 space-y-1 mb-3">
+                                <li>提升企業形象與國際競爭力，符合客戶與合作夥伴的供應鏈要求</li>
+                                <li>優化內部流程，降低營運成本，提高生產效率與產品/服務品質</li>
+                                <li>降低經營風險，尤其是環境、安全與資訊安全方面的風險</li>
+                                <li>有助於拓展海外市場，許多國際採購商要求供應商必須具備相關ISO認證</li>
+                                <li>提升員工士氣，建立標準化的工作模式，減少人為失誤</li>
+                            </ul>
+                            <p>對於政府標案或公部門採購，ISO認證往往也是入圍的基本門檻。</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ項目3 -->
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 text-left font-medium hover:bg-gray-50 transition-colors" onclick="toggleFaq(this)">
+                            <span>ISO認證的申請流程是什麼？需要多久時間？</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-4 pb-4 text-gray-700">
+                            <p class="mb-2">完整的ISO認證申請流程大致分為5個階段，總時程依企業規模與現有基礎而異：</p>
+                            <ol class="list-decimal pl-6 space-y-2 mb-3">
+                                <li>準備階段：成立推行小組、展開內部訓練、進行現況診斷（1-2個月）</li>
+                                <li>文件建立階段：制定品質手冊、程序文件、作業指導書等（1-3個月）</li>
+                                <li>內部推行階段：執行文件要求、內部審核、管理審查（2-4個月）</li>
+                                <li>外部審核階段：申請第三方認證機構、進行第一階段與第二階段審核（1-2個月）</li>
+                                <li>取得證書階段：針對審核缺失進行矯正、獲發ISO認證證書（1-2週）</li>
+                            </ol>
+                            <p>一般中小型企業完成整個流程大約需要1-6個月，大型企業可能需要6-12個月。</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ項目4 -->
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 text-left font-medium hover:bg-gray-50 transition-colors" onclick="toggleFaq(this)">
+                            <span>ISO認證證書的有效期是多久？如何維持有效性？</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-4 pb-4 text-gray-700">
+                            <p class="mb-2">ISO認證證書的有效期為3年，在這3年期間企業需要通過定期稽核來維持證書有效性：</p>
+                            <ul class="list-disc pl-6 space-y-1 mb-3">
+                                <li>年度監督審核：每12個月內，認證機構會進行一次現場監督審核，確認企業持續符合ISO標準要求</li>
+                                <li>不定期抽查：認證機構有權根據需要進行不定期的額外抽查</li>
+                                <li>再認證審核：3年有效期滿前，企業需要申請再認證審核，通過後可獲得新的3年有效期證書</li>
+                            </ul>
+                            <p>若企業在監督審核中出現重大不符合項且未按時矯正，認證機構有權吊銷或暫停其ISO認證證書。</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ項目5 -->
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 text-left font-medium hover:bg-gray-50 transition-colors" onclick="toggleFaq(this)">
+                            <span>申請ISO認證需要多少費用？費用包含哪些項目？</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-4 pb-4 text-gray-700">
+                            <p class="mb-2">ISO認證費用沒有固定標準，主要取決於企業規模、行業屬性、認證類別與輔導需求，大致包含以下項目：</p>
+                            <ul class="list-disc pl-6 space-y-1 mb-3">
+                                <li>輔導費用：若委託專業諮詢公司協助，費用依企業規模從數萬到數十萬港幣不等</li>
+                                <li>認證審核費用：第三方認證機構收取的審核費，包含初審、監督審核與再認證費用</li>
+                                <li>訓練費用：內部人員的ISO標準訓練、內部審核員訓練等費用</li>
+                                <li>文件製作與改善費用：流程優化、設備升級、文件印刷等相關費用</li>
+                            </ul>
+                            <p>中小型企業申請單一ISO 9001認證，總費用大約在1萬-8萬港幣之間，大型企業或多項認證並行則費用會相對提高。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+        
+     <!-- 頁尾 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-certificate text-secondary text-3xl mr-2"></i>
+                        <h3 class="text-xl font-bold">ISO認證諮詢中心</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        專業提供ISO各項認證諮詢、輔導與訓練服務，
+                        協助企業提升競爭力，邁向國際化。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4 border-b border-gray-700 pb-2">快速連結</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./home-1.html" class="text-gray-400 hover:text-white transition-colors">首頁</a></li>
+                        <li><a href="./ISO9001.html" class="text-gray-400 hover:text-white transition-colors"></a>ISO9001</li>
+                        <li><a href="./category.html" class="text-gray-400 hover:text-white transition-colors">管理體系分類</a></li>
+                        <li><a href="./ISOquestion.html" class="text-gray-400 hover:text-white transition-colors">ISO認證常見問題</a></li>
+                        <li><a href="./aboutUs.html" class="text-gray-400 hover:text-white transition-colors">講師團隊</a></li>
+                        <li><a href="./home-1.html" class="text-gray-400 hover:text-white transition-colors">聯繫我們</a></li>
+                    </ul>
+                </div>
+                
+                
+
+
+                <div>
+                    <h4 class="text-lg font-medium mb-4 border-b border-gray-700 pb-2">聯繫我們</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">深圳市光明區鬆白路5059號啓航大廈905室</li>
+                        <li class="text-gray-400">WhatsApp：53663058</li>
+                        <li class="text-gray-400">email:cocoyao570@gamil.com</li>
+                        <li class="text-gray-400">深圳辦事處</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy;廣東省深圳市証多寶認證服務有限公司 版權所有 |</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 導航欄滾動效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.add('shadow-sm');
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>  
+    
+
+    <!-- JavaScript -->
+    <script>
+        // FAQ展開/收合功能
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            const faqItem = button.parentElement;
+
+            // 切換答案顯示/隱藏
+            answer.classList.toggle('hidden');
+            // 切換圖示旋轉
+            icon.classList.toggle('rotate-180');
+            // 切換項目背景色
+            faqItem.classList.toggle('faq-item-active');
+
+            // 關閉其他已展開的FAQ
+            const allFaqButtons = document.querySelectorAll('.faq-question');
+            allFaqButtons.forEach(btn => {
+                if (btn !== button) {
+                    const otherAnswer = btn.nextElementSibling;
+                    const otherIcon = btn.querySelector('i');
+                    const otherFaqItem = btn.parentElement;
+
+                    otherAnswer.classList.add('hidden');
+                    otherIcon.classList.remove('rotate-180');
+                    otherFaqItem.classList.remove('faq-item-active');
+                }
+            });
+        }
+
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // 避開固定導航欄
+                        behavior: 'smooth'
+                    });
+
+                    // 更新導航欄活躍狀態
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('nav-link-active');
+                    });
+                    this.classList.add('nav-link-active');
+                }
+            });
+        });
+
+        // 滾動時更新導航欄活躍狀態
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 100)) {
+                    currentSection = '#' + section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('nav-link-active');
+                if (link.getAttribute('href') === currentSection) {
+                    link.classList.add('nav-link-active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

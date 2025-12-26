@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首席講師團隊 - ISO認證諮詢中心</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 圖示 -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定義配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a3a5f', // 深藍主色
+                    
+                        secondary: '#3b82f6', // 淺藍輔色
+                        neutral: '#f3f4f6', // 淺灰背景
+                        dark: '#1f2937', // 深色文字
+                        accent: '#6366f1', // 紫藍強調色
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .nav-link-active {
+                @apply text-primary border-b-2 border-primary;
+            }
+            .lecturer-card-hover {
+                @apply hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+            }
+        }
+    </style>
+    <!-- 引入台灣正體中文字型 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans text-dark bg-white">
+    <!-- 頁頭 (導航欄) -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <!-- 網站標誌 -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <i class="fa fa-certificate text-primary text-3xl mr-2"></i>
+                <h1 class="text-2xl font-bold text-primary">証多寶ISO認證服務</h1>
+            </div>
+            <!-- 導航連結 -->
+            <ul class="flex flex-wrap justify-center gap-6">
+                <li><a href="./home-1.html" class="py-2 font-medium hover:text-primary transition-colors">首頁</a></li>
+                <li><a href="./ISO9001.html" class="py-2 font-medium hover:text-primary transition-colors">ISO9001</a></li>
+                <li><a href="./category.html" class="py-2 font-medium hover:text-primary transition-colors">管理體系分類</a></li>
+                <li><a href="./ISOquestion.html" class="py-2 font-medium hover:text-primary transition-colors">ISO認證常見問題</a></li>
+                <li><a href="./aboutUs.html" class="nav-link-active py-2 font-medium hover:text-primary transition-colors">講師團隊</a></li>
+                <li><a href="./home-1.html" class="py-2 font-medium hover:text-primary transition-colors">聯繫我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主要內容區 -->
+    <main>
+        <!-- 頁面標題橫幅 -->
+        <section class="bg-gradient-to-r from-primary to-accent py-16 md:py-24 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">首席講師團隊</h2>
+                <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
+                    匯集業內頂尖ISO認證專家，擁有豐富輔導經驗，為您提供專業權威的諮詢服務
+                </p>
+                <div class="mt-8 inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2">
+                    <span class="flex items-center gap-2">
+                        <i class="fa fa-users"></i>
+                        <span>5位資深講師 | 累計35年產業經驗 | 輔導超2000家企業</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 講師團隊介紹區 (5位講師) -->
+        <section class="py-16 md:py-20 bg-neutral/50">
+            <div class="container mx-auto px-5">
+
+         <!-- 講師1：資深權威型 -->
+                <div class="mb-16 flex flex-col md:flex-row items-center gap-8 md:gap-12 lecturer-card-hover bg-white rounded-xl p-6 md:p-8 shadow-md">
+                    <div class="w-full md:w-1/4 lg:w-1/5">
+                        <div class="relative">
+                            <img src="./yaosir.jpg" alt="首席顧問 姚志強" class="w-full h-auto rounded-lg shadow-md object-cover">
+                            <div class="absolute -bottom-3 -right-3 bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                                <i class="fa fa-award text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-3/4 lg:w-4/5">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold text-primary">姚志強</h3>
+                                <p class="text-gray-600 text-lg">ISO認證資深輔導顧問 | 國家級註冊審核員 | 35年產業經驗</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-6 text-gray-700 space-y-3">
+                            <p>姚講師畢業於武漢大學 擁有ISO 9001、ISO 14001、ISO 45001等多項國際註冊審核員資格，
+                                過去35年間輔導超過500家企業順利通過ISO認證，涵蓋製造業、服務業、醫療業等多個領域。</p>
+                            <p>擅長以淺顯易懂的方式解說複雜的ISO標準條文，協助企業建立符合自身營運需求的管理系統，
+                                不僅協助企業通過認證，更能透過流程優化提升企業營運績效，深受客戶好評。</p>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-trophy text-primary"></i>
+                                <span>>國際註冊審核員</span>
+                            </div>
+                            
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-graduation-cap text-primary"></i>
+                                <span>500+輔導案例</span>
+                            </div>
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-globe text-primary"></i>
+                                <span>數十場公開講座</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 講師2：資深權威型 -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12 lecturer-card-hover bg-white rounded-xl p-6 md:p-8 shadow-md">
+                    <div class="w-full md:w-1/4 lg:w-1/5">
+                        <div class="relative">
+                            <img src="./misslin.jpeg" alt="首席學術顧問 黃淑華" class="w-full h-auto rounded-lg shadow-md object-cover">
+                            <div class="absolute -bottom-3 -right-3 bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                                <i class="fa fa-book text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-3/4 lg:w-4/5">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold text-primary">黃淑華</h3>
+                                <p class="text-gray-600 text-lg">首席學術顧問 | 上海財經大學教授</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fa fa-university"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-6 text-gray-700 space-y-3">
+                            <p>上海財經大學博士，現任大學工業管理系教授，從事ISO國際標準研究與教學工作20年，長期參與我國ISO管理體系標準的製定與修訂工作。</p>
+                            <p>發表學術論文50餘篇，主持12項科技部研究課題，講課風格邏輯嚴謹，兼具理論深度與實務指導性。</p>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-university text-primary"></i>
+                                <span>高校資深教授</span>
+                            </div>
+                            
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-search text-primary"></i>
+                                <span>12項科技部課題</span>
+                            </div>
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-gavel text-primary"></i>
+                                <span>國家標準制定委員</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <!-- 講師3：親和實戰型 -->
+                <div class="mb-16 flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12 lecturer-card-hover bg-white rounded-xl p-6 md:p-8 shadow-md">
+                    <div class="w-full md:w-1/4 lg:w-1/5">
+                        <div class="relative">
+                            <img src="./missyao.jpeg" alt="首席講師 姚聰" class="w-full h-auto rounded-lg shadow-md object-cover">
+                            <div class="absolute -bottom-3 -right-3 bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                                <i class="fa fa-thumbs-up text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-3/4 lg:w-4/5">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold text-primary">姚聰</h3>
+                                <p class="text-gray-600 text-lg">首席講師 | 中小企業ISO實戰專家</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fa fa-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-6 text-gray-700 space-y-3">
+                            <p>從基層品質管理員一路成長為資深ISO輔導專家，深耕中小企業ISO認證領域10年，深知中小企業在申請認證時的痛點與難題——預算有限、人手不足、流程不規範。</p>
+                            <p>不同於學院派講師，姚講師擅長用「白話文」拆解艱澀的ISO條文，將複雜的管理體系化為「一步一腳印」的可執行步驟，輔導過的中小企業認證通過率高達98%，且客戶回頭率超過70%，被親切稱為「ISO認證平民專家」。</p>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-check-circle text-primary"></i>
+                                <span>通過率高達98%</span>
+                            </div>
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-comments text-primary"></i>
+                                <span>通俗化講解風格</span>
+                            </div>
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-lightbulb-o text-primary"></i>
+                                <span>研發快速落地法</span>
+                            </div>
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-star text-primary"></i>
+                                <span>客戶滿意度95%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 講師4：跨界專家型 -->
+                <div class="mb-16 flex flex-col md:flex-row items-center gap-8 md:gap-12 lecturer-card-hover bg-white rounded-xl p-6 md:p-8 shadow-md">
+                    <div class="w-full md:w-1/4 lg:w-1/5">
+                        <div class="relative">
+                            <img src="./liesir.jpg" alt="首席技術顧問 陳柏翰" class="w-full h-auto rounded-lg shadow-md object-cover">
+                            <div class="absolute -bottom-3 -right-3 bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                                <i class="fa fa-laptop text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-3/4 lg:w-4/5">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold text-primary">李柏翰</h3>
+                                <p class="text-gray-600 text-lg">首席技術顧問 | 資安+管理雙棲專家</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-6 text-gray-700 space-y-3">
+                            <p>擁有資訊工程碩士與企業管理碩士雙學位，兼具10年資訊技術研發經驗與12年ISO管理體系輔導經驗，是業內少見的「技術+管理」雙棲專家。</p>
+                            <p>在ISO 27001資訊安全管理領域，曾協助數十家科技企業、金融機構建立完善資安防護體系；在ISO 9001品質管理領域，擅長結合ERP/CRM工具實現流程自動化，提供「ISO認證+數位化升級」一站式解決方案。</p>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-shield text-primary"></i>
+                                <span>CISSP國際資安專家</span>
+                            </div>
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-laptop text-primary"></i>
+                                <span>企業資訊化規劃專家</span>
+                            </div>
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-tasks text-primary"></i>
+                                <span>PMP項目管理師</span>
+                            </div>
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-code text-primary"></i>
+                                <span>ISO與數位化整合</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 講師5：學術教研型 -->
+                
+                <div class="mb-16 flex flex-col md:flex-row items-center gap-8 md:gap-12 lecturer-card-hover bg-white rounded-xl p-6 md:p-8 shadow-md">
+                    <div class="w-full md:w-1/4 lg:w-1/5">
+                        <div class="relative">
+                            <img src="./wansir.jpg" alt="首席顧問 王明遠" class="w-full h-auto rounded-lg shadow-md object-cover">
+                            <div class="absolute -bottom-3 -right-3 bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                                <i class="fa fa-award text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-3/4 lg:w-4/5">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold text-primary">王明遠</h3>
+                                <p class="text-gray-600 text-lg">首席顧問 | ISO國際註冊高級審核員</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-6 text-gray-700 space-y-3">
+                            <p>畢業於華東師範大學工業工程與管理博士班，擁有ISO 9001、ISO 14001、ISO 45001、ISO 27001等多項國際頂級審核員資格，曾任某跨國認證機構亞太區技術總監。</p>
+                            <p>過去25年間，累計輔導超過800家大中小型企業通過國際ISO認證，涵蓋製造業、電子業、服務業、醫療機構等多個領域，其中包含100餘家上市上櫃企業，輔導案例多次獲選為「亞太區最佳品質管理典範」。</p>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-trophy text-primary"></i>
+                                <span>亞太品質管理大獎得主</span>
+                            </div>
+                            
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-graduation-cap text-primary"></i>
+                                <span>大學EMBA客座講師</span>
+                            </div>
+                            <div class="bg-neutral rounded-lg p-3 flex items-center gap-2">
+                                <i class="fa fa-globe text-primary"></i>
+                                <span>多國講學經驗</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+
+
+        
+         <style>
+        /* 重置默认样式，避免兼容性问题 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 响应式浮动WhatsApp按钮样式 */
+        .whatsapp-float {
+            /* 固定定位，实现浮动效果，不随页面滚动而消失 */
+            position: fixed;
+            /* 定位在页面右下角，可根据需求调整right/bottom值 */
+            right: 20px;
+            bottom: 20px;
+            /* 按钮大小，移动端自动适配，也可通过媒体查询微调 */
+            width: 60px;
+            height: 60px;
+            /* 圆角设置为50%，实现圆形按钮 */
+            border-radius: 50%;
+            /* WhatsApp品牌绿色背景 */
+            background-color: #25d366;
+            /* 按钮阴影，提升立体感 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            /* 文字/图标居中 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 层级设置，确保按钮在最上层，不被其他元素遮挡 */
+            z-index: 9999;
+            /* 去除下划线（针对链接） */
+            text-decoration: none;
+            /* 过渡效果，hover时更顺滑 */
+            transition: all 0.3s ease;
+            /* 禁止文字选中 */
+            user-select: none;
+        }
+
+        /* 按钮悬浮效果 */
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            background-color: #128c7e;
+        }
+
+        /* WhatsApp图标样式（使用文字替代图片，无需额外资源） */
+        .whatsapp-float i {
+            color: #ffffff;
+            font-size: 28px;
+        }
+
+        /* 媒体查询：适配小屏手机（可选，进一步优化移动端体验） */
+        @media (max-width: 480px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .whatsapp-float i {
+                font-size: 24px;
+            }
+        }
+
+        /* 可选：添加消息提示红点 */
+        .whatsapp-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background-color: #ff3b30;
+            color: white;
+            border-radius: 50%;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+    <!-- 可选：引入Font Awesome图标库（用于显示WhatsApp图标，若不想用图标可替换为文字） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+
+    <!-- ========== WhatsApp浮动按钮（核心元素，需添加到此处） ========== -->
+    <a href="https://wa.me/85253663058" target="_blank" class="whatsapp-float" title="通过WhatsApp联系我们">
+        <i class="fab fa-whatsapp"></i>
+        <!-- 可选：消息提示红点，不需要可删除 -->
+        <span class="whatsapp-badge">1</span>
+    </a>
+</body>
+
+        <!-- 團隊優勢展示區 -->
+        <section class="py-16 bg-primary/5">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">我們的團隊優勢</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">集結不同領域專家，提供全方位ISO認證解決方案</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-md lecturer-card-hover">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="fa fa-certificate text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">頂級資質認證</h3>
+                        <p class="text-gray-700 text-center">
+                            全體講師均持有國際頂級ISO審核員資格，具備專業權威性
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-md lecturer-card-hover">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="fa fa-history text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">豐富產業經驗</h3>
+                        <p class="text-gray-700 text-center">
+                            累計35年輔導經驗，覆蓋多個行業，熟悉各類企業痛點
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-md lecturer-card-hover">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="fa fa-handshake-o text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">一對一專屬服務</h3>
+                        <p class="text-gray-700 text-center">
+                            根據企業需求定製方案，全程跟進直至認證順利通過
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-md lecturer-card-hover">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="fa fa-line-chart text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">價值超越認證</h3>
+                        <p class="text-gray-700 text-center">
+                            不僅協助通過認證，更助力企業優化流程、提升績效
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    
+
+    <!-- 頁尾 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-certificate text-secondary text-3xl mr-2"></i>
+                        <h3 class="text-xl font-bold">ISO認證諮詢中心</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        專業提供ISO各項認證諮詢、輔導與訓練服務，
+                        協助企業提升競爭力，邁向國際化。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4 border-b border-gray-700 pb-2">快速連結</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./home-1.html" class="text-gray-400 hover:text-white transition-colors">首頁</a></li>
+                        <li><a href="./ISO9001.html" class="text-gray-400 hover:text-white transition-colors"></a>ISO9001</li>
+                        <li><a href="./category.html" class="text-gray-400 hover:text-white transition-colors">管理體系分類</a></li>
+                        <li><a href="./ISOquestion.html" class="text-gray-400 hover:text-white transition-colors">ISO認證常見問題</a></li>
+                        <li><a href="./aboutUs.html" class="text-gray-400 hover:text-white transition-colors">講師團隊</a></li>
+                        <li><a href="./home-1.html" class="text-gray-400 hover:text-white transition-colors">聯繫我們</a></li>
+                    </ul>
+                </div>
+                
+                
+
+
+                <div>
+                    <h4 class="text-lg font-medium mb-4 border-b border-gray-700 pb-2">聯繫我們</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">深圳市光明區鬆白路5059號啓航大廈905室</li>
+                        <li class="text-gray-400">WhatsApp：53663058</li>
+                        <li class="text-gray-400">email:cocoyao570@gamil.com</li>
+                        <li class="text-gray-400">深圳辦事處</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy;廣東省深圳市証多寶認證服務有限公司 版權所有 |</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 導航欄滾動效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.add('shadow-sm');
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
